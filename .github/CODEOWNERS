@@ -1,0 +1,7 @@
+# ==============================================================================
+# GitHub CODEOWNERS
+# Define al único propietario y revisor autorizado de todo el repositorio.
+# Únicamente @AndresSantiagoJimenez puede aprobar y fusionar cambios.
+# ==============================================================================
+
+* @AndresSantiagoJimenez

@@ -1,0 +1,40 @@
+name: CI - Integración Continua & Quality Gate
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-security:
+    name: Pruebas Unitarias, Calidad de Código y Seguridad
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar uv (Package & Project Manager)
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+          enable-cache: true
+
+      - name: Configurar Python 3.12
+        run: uv python install 3.12
+
+      - name: Sincronizar Dependencias
+        run: uv sync --all-extras --dev
+
+      - name: Análisis de Seguridad Estática (Bandit AST)
+        run: |
+          uv run bandit -r src/
+
+      - name: Ejecución de Suite de Pruebas (Pytest & Cobertura)
+        run: |
+          uv run pytest test/ -v --cov=src --cov-report=xml --cov-report=term
+
+      - name: Verificación de Integridad de Sintaxis (Compilation Check)
+        run: |
+          uv run python -m py_compile app.py src/*.py
