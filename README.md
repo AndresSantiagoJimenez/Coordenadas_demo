@@ -197,6 +197,6 @@ PORTAFOLIO_ANDRES/
 ## 👨‍💻 Autor
 
 **Andrés Santiago Jiménez**  
-*Ingeniero de Datos Senior, Arquitecto de Datos y Especialista en Gobierno de Datos*  
+*Ingeniero de Datos Mid-Level | Data Engineering, Data Quality y Data Governance.*  
 * GitHub: [@AndresSantiagoJimenez](https://github.com/AndresSantiagoJimenez)
 * Repositorio: [https://github.com/AndresSantiagoJimenez/Coordenadas_demo](https://github.com/AndresSantiagoJimenez/Coordenadas_demo)
