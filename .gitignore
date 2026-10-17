@@ -1,0 +1,74 @@
+# ============================================================================
+# Material local no publicado: fichas de fuentes descartadas, notebooks 02/05/09,
+# originales pre-reorganización de 01/03, entregable, handoff, scripts de fuentes
+# descartadas. Ver _privado/README.md.
+# ============================================================================
+/_privado/
+
+# ============================================================================
+# data/: SE VERSIONAN los derivados (~200 MB, ningún archivo >100 MB):
+# features_mgn2025/, analisis_columnas/, stops_co, Divipola, diccionarios y
+# CSVs de evidencia. Los CRUDOS de las 5 fuentes (4,1 GB, con archivos >100 MB
+# que GitHub rechaza) quedan solo en disco local — re-descargables con
+# src/download_*.{sh,py} + manifiesto, u opcionalmente adjuntos a un Release.
+# ============================================================================
+
+# --- crudos de las 5 fuentes: locales, fuera de git ----------------------------
+data/mgn_viv/
+data/cnue/*
+!data/cnue/Dicc_ManzanasCNUE.xlsx
+data/overture/*.parquet
+data/gtfs/*
+!data/gtfs/stops_co.parquet
+data/cnpv/*
+!data/cnpv/MGN2018_Integrado_CNPV2018_InstructivoUso.pdf
+
+# ===============================================================================
+# Fuentes no añadidas
+# ===============================================================================
+Data/DANE/
+Data/features_mgn2025
+
+
+# --- confidencial / datos personales: JAMÁS versionar --------------------------
+# _ref/ = referencias del modelo (coordenadas de clientes, baseline censal)
+data/_ref/
+data/analisis_columnas/n_clientes_por_manzana.csv
+data/rues/empresas_activas_*.csv
+data/estrato/*/informacion_predios.csv
+data/estrato/*/estratificacion_urbana_*.csv
+
+# --- caches regenerables demasiado pesados -------------------------------------
+data/analisis_columnas/vecinos_k200.npy
+
+# --- fuentes descartadas: borradas del disco el 2026-08-04, pero
+#     src/download_bloques_ab.sh puede re-descargarlas — que no entren al repo ---
+data/ipm/
+data/accesibilidad/
+data/deficit_habitacional/
+data/dem/
+data/ghsl/
+data/worldpop/
+data/sedes_sise/
+data/proy_densidad/
+data/ceed/
+data/acer/
+data/dee/
+data/black_marble/*.h5
+data/estrato/bogota/manzanaestratificacion.zip
+data/estrato/bogota/ManzanaEstratificacion.*
+
+# ============================================================================
+# Entorno y artefactos
+# ============================================================================
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.earthdata_token
+*.earthdata_token
+.env
+
+# Configuración local de herramientas
+.vscode/
