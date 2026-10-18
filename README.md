@@ -101,7 +101,14 @@ El proyecto utiliza **[`uv`](https://github.com/astral-sh/uv)**, el gestor de pa
 git clone https://github.com/AndresSantiagoJimenez/Coordenadas_demo.git
 cd Coordenadas_demo
 ```
-
+### 1.1 Si no tienes uv instalado, ese es el siguiente paso. En macOS o Linux:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+### 1.2 En Windows desde PowerShell:
+```bash
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 ### 2. Instalar dependencias con `uv` (en segundos)
 ```bash
 # Sincroniza el entorno virtual con todas las dependencias
